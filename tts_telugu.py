@@ -1,9 +1,14 @@
-import pyttsx3
-
-engine = pyttsx3.init()
-engine.setProperty("rate", 150)
+from gtts import gTTS
+from playsound import playsound
+import uuid
+import os
 
 def speak(text):
     print("🔊 TELUGU:", text)
-    engine.say(text)
-    engine.runAndWait()
+
+    filename = f"telugu_{uuid.uuid4()}.mp3"
+    tts = gTTS(text=text, lang="te")
+    tts.save(filename)
+
+    playsound(filename)
+    os.remove(filename)

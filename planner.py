@@ -1,5 +1,5 @@
 class Planner:
-    REQUIRED_FIELDS = ["age", "income", "occupation"]
+    REQUIRED_FIELDS = ["age", "income", "occupation", "gender"]
 
     def plan(self, memory):
         missing = [f for f in self.REQUIRED_FIELDS if f not in memory]

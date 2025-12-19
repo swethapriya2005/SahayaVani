@@ -3,4 +3,3 @@ class Evaluator:
         if result is None:
             return "FAILURE"
         return "SUCCESS"
-
